@@ -1,0 +1,64 @@
+@import './base.css';
+
+/* #app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+  background-color: #d1f1ff;
+} */
+/*
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  }
+} */
+
+:root {
+  --custom-bg: linear-gradient(334.25deg, #d7f1ff -8.18%, #f2f8ff 65.15%);
+  --custom-font-family: 'Poppins', sans-serif;
+}
+
+.background {
+  background: var(--custom-bg-gradient);
+  font-family: var(--custom-font-family);
+}
+
+.poppins-font {
+  font-family: var(--custom-font-family);
+}
+
+.poppins-bold {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+.poppins-light {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
