@@ -2,7 +2,7 @@
 
 This template should help get you started developing with Vue 3 in Vite.
 
-![Setup Installation](./assets/setup-instalasi-project.jpeg)
+![Setup Installation](./src/assets/setup-instalasi-project.jpeg)
 
 ## Recommended IDE Setup
 
