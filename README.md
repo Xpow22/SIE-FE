@@ -85,3 +85,25 @@ vue3-lottie@3.3.0
 ```sh
 npm i vue3-lottie
 ```
+
+npm list
+├── @fortawesome/fontawesome-free@6.6.0
+├── @fortawesome/fontawesome-svg-core@6.6.0
+├── @fortawesome/free-solid-svg-icons@6.6.0
+├── @fortawesome/vue-fontawesome@3.0.8
+├── @iconify/vue@4.1.2
+├── @lottiefiles/dotlottie-vue@0.4.9
+├── @rushstack/eslint-patch@1.10.4
+├── @vitejs/plugin-vue@5.1.2
+├── @vue/eslint-config-prettier@9.0.0
+├── bootstrap@5.3.3
+├── eslint-plugin-vue@9.27.0
+├── eslint@8.57.0
+├── lottie-web@5.12.2
+├── prettier@3.3.3
+├── vee-validate@4.13.2
+├── vite@5.3.5
+├── vue-router@4.4.2
+├── vue@3.4.35
+├── vue3-lottie@3.3.0
+└── yup@1.4.0
