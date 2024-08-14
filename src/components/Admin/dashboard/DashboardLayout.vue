@@ -1,9 +1,9 @@
 <template>
     <div class="dashboard">
-        <UserSidebar :isCollapsed="isSidebarCollapsed" />
-        <div class="main-content bg-custom" :class="{ 'expanded': isSidebarCollapsed }">
-            <AdminNavbar :isSidebarCollapsed="isSidebarCollapsed" @toggle-sidebar="toggleSidebar" />
-            <div class="content bg-custom">
+        <AdminSidebar :isCollapsed="isSidebarCollapsed" @toggle-sidebar="toggleSidebar" />
+        <div class="main-content" :class="{ 'expanded': isSidebarCollapsed }">
+            <AdminNavbar :isSidebarCollapsed="isSidebarCollapsed" />
+            <div class="content">
                 <slot />
             </div>
             <UserFooter :class="{ 'collapsed': isSidebarCollapsed }" />
@@ -13,13 +13,13 @@
 
 <script>
 import AdminNavbar from '../AdminNavbar.vue';
-import UserSidebar from '../AdminSidebar.vue';
+import AdminSidebar from '../AdminSidebar.vue';
 import UserFooter from '../../UserFooter.vue';
 
 export default {
     components: {
         AdminNavbar,
-        UserSidebar,
+        AdminSidebar,
         UserFooter
     },
     data() {
@@ -38,7 +38,6 @@ export default {
 <style scoped>
 .dashboard {
     display: flex;
-    height: 100vh;
 }
 
 .main-content {

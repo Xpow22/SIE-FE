@@ -2,9 +2,8 @@
     <div class="faq-page d-flex flex-column min-vh-100">
         <!-- UserNavbar -->
         <UserNavbar />
-
-        <div class="container my-5 flex-grow-1">
-            <h1 class="faq-custom mb-4">FAQ | Frequently Asked Questions</h1>
+        <div class="container flex-grow-1">
+            <h1 class="faq-custom my-3 fw-bolder">FAQ | Frequently Asked Questions</h1>
             <div class="accordion" id="faqAccordion">
                 <div v-for="(category, catIndex) in faqCategories" :key="'cat-' + catIndex">
                     <!-- <h2>{{ category.title }}</h2> -->
@@ -116,7 +115,7 @@ export default {
 
 .faq-custom {
     background-color: #0260CE;
-    padding: 20px;
+    padding: 15px;
     border-radius: 20px;
     color: white;
 }

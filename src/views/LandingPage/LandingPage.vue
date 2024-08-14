@@ -1,6 +1,6 @@
 <template>
     <UserLayout @show-login-modal="showLoginModal">
-        <div class="container-fluid rounded-4 mt-3 mb-5 mx-auto poppins-font bg-light">
+        <div class="container-fluid rounded-4 poppins-font bg-light">
             <div class="row align-items-center">
                 <div class="col-md-6 px-4">
                     <img src="@/assets/logo-sie.png" height="150px" width="150px" alt="Illustration"
@@ -37,7 +37,7 @@
 <script>
 import UserLayout from "@/components/UserLayout.vue";
 import ModalLogin from "@/components/auth/ModalLogin.vue";
-import animationData from "../../assets/sielanding.json"; // Pastikan path ini benar
+import animationData from "../../assets/sielanding.json";
 import { Vue3Lottie } from 'vue3-lottie'
 
 export default {
@@ -50,7 +50,7 @@ export default {
     data() {
         return {
             isLoginModalVisible: false,
-            animationData, // Menggunakan data JSON sebagai animationData
+            animationData,
         };
     },
     methods: {
@@ -122,13 +122,4 @@ export default {
     margin-right: auto;
     margin-left: auto;
 }
-
-/* .row>* {
-    flex-shrink: 0;
-    width: 100%;
-    max-width: 100%;
-    padding-right: calc(var(--bs-gutter-x)* .5);
-    padding-left: calc(var(--bs-gutter-x)* .5);
-    margin-top: var(--bs-gutter-y);
-} */
 </style>

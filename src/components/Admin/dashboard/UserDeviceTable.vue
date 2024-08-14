@@ -1,17 +1,15 @@
 <template>
     <div class="container">
-        <div class="d-flex align-items-start mt-5 h-100">
-            <!-- Button Perangkat -->
+        <!-- <div class="d-flex align-items-start my-3 h-100">
             <button class="btn btn-custom shadow-lg btn-perangkat me-2" @click="handlePerangkatClick">
                 <img src="@/assets/Property 1=perangkat.png" alt="Perangkat" width="20" height="20" class="me-1" />
                 Perangkat
             </button>
-            <!-- Button Tampilan -->
             <button class="btn bg-white shadow-lg btn-perangkat" @click="handleTampilanClick">
                 <img src="@/assets/Vector.png" alt="Tampilan" width="20" height="20" class="me-1" />
                 Tampilan
             </button>
-        </div>
+        </div> -->
 
         <!-- Wrapped Background and Table -->
         <div class="background-container mt-3"></div>
@@ -114,7 +112,7 @@ export default {
                 { id: 40, name: 'Perangkat-40', type: 'TABLET', mac: '00-B0-D0-63-C2-29', status: true }
             ],
             currentPage: 1,
-            itemsPerPage: 10
+            itemsPerPage: 6
         };
     },
     computed: {
@@ -159,7 +157,7 @@ export default {
 }
 
 .background-container {
-    background-image: url('@/assets/Daftar-Perangkat.png');
+    background-image: url('@/assets/infografis.png');
     background-size: cover;
     background-position: center;
     border-radius: 20px;
@@ -176,12 +174,8 @@ export default {
 .table {
     width: 100%;
     border-collapse: separate;
-    /* Ensures borders and border radius are handled correctly */
     border-spacing: 0;
-    /* Removes space between cells */
     border-radius: 20px 20px 20px 20px;
-    /* Rounded corners for the table */
     overflow: hidden;
-    /* Keeps child elements within the rounded corners */
 }
 </style>

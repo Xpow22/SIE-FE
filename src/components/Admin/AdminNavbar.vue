@@ -1,17 +1,11 @@
 <template>
-    <nav :class="['navbar', { collapsed: isSidebarCollapsed }]"
-        class="navbar bg-custom p-2 d-flex justify-content-between">
-        <!-- Toggle Button Always Visible -->
-        <div class="cursor-pointer" @click="toggleSidebar">
-            <img :class="{ rotated: isSidebarCollapsed }" src="@/assets/chevron-circle-left-Filled.png"
-                alt="Toggle Sidebar" />
-        </div>
-
+    <nav :class="['navbar', { collapsed: isSidebarCollapsed }]" class="navbar py-3 px-3 d-flex justify-content-end">
         <!-- Search bar -->
-        <div class="form-group has-search shadow-lg w-75 flex-grow mx-2 rounded-5 d-lg-flex">
+        <!-- <div class="form-group has-search shadow-lg w-75 flex-grow mx-2 rounded-5 d-lg-flex">
             <img src="@/assets/search-Bold.png" class="search-icon" alt="Search Icon" />
             <input type="text" class="form-control rounded-4" placeholder="Cari" />
-        </div>
+        </div> -->
+
 
         <!-- User greeting and icon -->
         <div class="dropdown">
@@ -23,17 +17,14 @@
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <li><a class="dropdown-item" href="#">Profile</a></li>
-                <!-- <li><a class="dropdown-item" href="#">Settings</a></li> -->
                 <li>
                     <hr class="dropdown-divider">
                 </li>
                 <li><a class="dropdown-item" href="/" @click="logout">Logout</a></li>
             </ul>
         </div>
-
     </nav>
 </template>
-
 
 <script>
 export default {
@@ -45,9 +36,6 @@ export default {
         },
     },
     methods: {
-        toggleSidebar() {
-            this.$emit("toggle-sidebar");
-        },
         logout() {
             // Implementasi logika logout
             console.log('Logging out...');
@@ -57,15 +45,11 @@ export default {
 };
 </script>
 
-
-
 <style scoped>
 .navbar {
     transition: margin-left 0.3s, width 0.3s;
-    background-color: #d1f1ff;
     width: 100%;
     z-index: 1000;
-    height: 60px;
 }
 
 .collapsed {

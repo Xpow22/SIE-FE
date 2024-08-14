@@ -35,7 +35,7 @@ a,
   }
 } */
 
-:root {
+/* :root {
   --custom-bg: linear-gradient(334.25deg, #d7f1ff -8.18%, #f2f8ff 65.15%);
   --custom-font-family: 'Poppins', sans-serif;
 }
@@ -43,7 +43,7 @@ a,
 .background {
   background: var(--custom-bg-gradient);
   font-family: var(--custom-font-family);
-}
+} */
 
 .poppins-font {
   font-family: var(--custom-font-family);

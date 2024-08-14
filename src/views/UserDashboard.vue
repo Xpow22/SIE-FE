@@ -1,8 +1,6 @@
 <template>
   <DashboardLayout>
-    <!-- <div class="bg-custom"> -->
     <UserDeviceTable />
-    <!-- </div> -->
   </DashboardLayout>
 </template>
 
