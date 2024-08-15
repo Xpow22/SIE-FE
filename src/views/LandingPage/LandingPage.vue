@@ -3,8 +3,7 @@
         <div class="container-fluid rounded-4 poppins-font bg-light">
             <div class="row align-items-center">
                 <div class="col-md-6 px-4">
-                    <img src="@/assets/logo-sie.png" height="150px" width="150px" alt="Illustration"
-                        class="img-fluid mb-3" />
+                    <img src="@/assets/logo-sie.png" width="150px" alt="Illustration" class="img-fluid mb-3" />
                     <h1 class="text-custom text-primary poppins-bold">
                         SISTEM INFORMASI EKSEKUTIF
                     </h1>

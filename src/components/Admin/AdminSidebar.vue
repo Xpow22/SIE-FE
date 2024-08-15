@@ -1,10 +1,10 @@
 <template>
     <div :class="['sidebar bg-transparent', { 'collapsed': isCollapsed }]">
-        <div class="brand-container bg-transparent py-2">
+        <div class="brand-container bg-transparent py-3">
             <img src="@/assets/logo-sie.png" class="logo px-1" alt="Logo SIE">
             <div v-if="!isCollapsed" class="brand-name my-2">
                 <div class="text-primary fw-semibold">Sistem Informasi Eksekutif</div>
-                <span class="fw-semibold"> KEMENDAGRI</span>
+                <span class="fw-semibold">KEMENDAGRI</span>
             </div>
             <!-- Toggle Button in Sidebar -->
             <button @click="toggleSidebar" class="btn toggle-btn ms-4">
@@ -13,35 +13,11 @@
             </button>
         </div>
         <ul class="nav flex-column ">
-            <!-- Menu Items -->
-            <li class="nav-item mt-3">
-                <router-link to="/dashboard" class="nav-link">
-                    <img src="@/assets/Property 1=dashboard.png" class="nav-icon" alt="Dashboard">
-                    <span class="ms-2" v-if="!isCollapsed">Infografis</span>
-                </router-link>
-            </li>
-            <li class="nav-item mt-3">
-                <router-link to="/perangkat" class="nav-link">
-                    <img src="@/assets/Property 1=perangkat.png" class="nav-icon" alt="Perangkat">
-                    <span class="ms-2" v-if="!isCollapsed">Jadwal Penayangan</span>
-                </router-link>
-            </li>
-            <li class="nav-item mt-3">
-                <router-link to="/media" class="nav-link">
-                    <img src="@/assets/Property 1=media.png" class="nav-icon" alt="Media">
-                    <span class="ms-2" v-if="!isCollapsed">Dashboard Eksekutif</span>
-                </router-link>
-            </li>
-            <li class="nav-item mt-3">
-                <router-link to="/tampilan" class="nav-link">
-                    <img src="@/assets/Property 1=tampilan.png" class="nav-icon" alt="Tampilan">
-                    <span class="ms-2" v-if="!isCollapsed">Laporan</span>
-                </router-link>
-            </li>
-            <li class="nav-item mt-3">
-                <router-link to="/hak-akses" class="nav-link">
-                    <img src="@/assets/Property 1=superuser.png" class="nav-icon" alt="Hak Akses">
-                    <span class="ms-2" v-if="!isCollapsed">Pengaturan</span>
+            <!-- Mapped Menu Items -->
+            <li v-for="(item, index) in menuItems" :key="index" class="nav-item mt-3">
+                <router-link :to="item.route" class="nav-link">
+                    <img :src="item.icon" class="nav-icon" :alt="item.title">
+                    <span class="ms-2" v-if="!isCollapsed">{{ item.title }}</span>
                 </router-link>
             </li>
         </ul>
@@ -49,30 +25,53 @@
 </template>
 
 <script>
+import DashboardIcon from '@/assets/Property 1=dashboard.png';
+import PerangkatIcon from '@/assets/Property 1=perangkat.png';
+import MediaIcon from '@/assets/Property 1=media.png';
+import TampilanIcon from '@/assets/Property 1=tampilan.png';
+import SuperuserIcon from '@/assets/Property 1=superuser.png';
+
 export default {
     name: 'AdminSidebar',
     props: {
         isCollapsed: {
             type: Boolean,
-            default: false
-        }
+            default: false,
+        },
+    },
+    data() {
+        return {
+            menuItems: [
+                { title: 'Infografis', route: '/Infografis', icon: DashboardIcon },
+                { title: 'Jadwal Penayangan', route: '/jadwal-penayangan', icon: PerangkatIcon },
+                { title: 'Dashboard Eksekutif', route: '/dashboard-eksekutif', icon: MediaIcon },
+                { title: 'Laporan', route: '/laporan', icon: TampilanIcon },
+                { title: 'Pengaturan', route: '/pengaturan', icon: SuperuserIcon },
+            ],
+        };
     },
     methods: {
         toggleSidebar() {
             this.$emit('toggle-sidebar');
-        }
-    }
+        },
+    },
 };
 </script>
 
 <style scoped>
+/* (Include your existing styles here, no changes needed) */
+</style>
+
+
+
+<style scoped>
 .sidebar {
     transition: width 0.3s;
-    width: 300px;
+    width: 270px;
 }
 
 .collapsed {
-    width: 150px;
+    width: 120px;
 }
 
 .rotated {
@@ -107,8 +106,8 @@ export default {
 }
 
 .toggle-btn img {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     transition: transform 0.3s ease;
 }
 
@@ -149,9 +148,13 @@ export default {
     margin-right: 10px;
 }
 
-.sidebar.collapsed .logo,
+
 .sidebar.collapsed .nav-icon {
     transform: translateX(20px);
+}
+
+.sidebar.collapsed .logo {
+    transform: translateX(30px);
 }
 
 .sidebar.collapsed .brand-name {

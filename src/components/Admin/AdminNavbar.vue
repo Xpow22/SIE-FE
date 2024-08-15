@@ -5,8 +5,6 @@
             <img src="@/assets/search-Bold.png" class="search-icon" alt="Search Icon" />
             <input type="text" class="form-control rounded-4" placeholder="Cari" />
         </div> -->
-
-
         <!-- User greeting and icon -->
         <div class="dropdown">
             <button class="btn custom-cover text-black rounded-5 shadow-lg" type="button" id="dropdownMenuButton"

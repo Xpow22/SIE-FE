@@ -1,7 +1,7 @@
 <template>
   <footer :class="['footer bg-transparent', { 'collapsed': isSidebarCollapsed }]">
     <div class="text-center p-3">
-      PUSAT DATA KEMENDAGRI | © 2024
+      PUSDATIN KEMENDAGRI | 2024
     </div>
   </footer>
 </template>

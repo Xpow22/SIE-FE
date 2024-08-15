@@ -7,17 +7,16 @@
         <!-- Sidebar -->
         <div class="question flex-column">
           <ul class="nav flex-column">
-            <li class="nav-item" v-for="(item, index) in menuItems" :key="index">
-              <a href="#" class="nav-link" :class="{ active: selectedIndex === index }"
-                @click.prevent="selectMenu(index)">
+            <li class="nav-item" v-for="(item, index) in menuItems" :key="index"
+              :class="{ active: selectedIndex === index }" @click.prevent="selectMenu(index)">
+              <a href="#" class="nav-link">
                 {{ item.title }}
               </a>
+              <!-- Move the icon to the selected nav-item -->
+              <img v-if="selectedIndex === index" src="@/assets/chevron-circle-right-Filled.png" alt="Selected Icon"
+                class="selected-icon" />
             </li>
           </ul>
-          <div @click="toggleSidebar" class="btn toggle-btn">
-            <img src="@/assets/chevron-circle-right-Filled.png" alt="Toggle Icon" class="toggle-icon"
-              :class="{ 'rotate': isSidebarCollapsed }" />
-          </div>
         </div>
         <!-- Content -->
         <div class="content flex-grow-1">
@@ -37,7 +36,7 @@ export default {
   name: 'AboutUs',
   components: {
     UserNavbar,
-    UserFooter
+    UserFooter,
   },
   data() {
     return {
@@ -45,37 +44,33 @@ export default {
         {
           title: 'Apa itu SIE?',
           content:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet.'
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet.',
         },
         { title: 'Logo SIE', content: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' },
         {
           title: 'System',
           content:
-            'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+            'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         },
         {
           title: 'Sumber Data',
           content:
-            'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
-        }
+            'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+        },
       ],
       selectedIndex: 0,
-      isSidebarCollapsed: false
     };
   },
   computed: {
     selectedContent() {
       return this.menuItems[this.selectedIndex].content;
-    }
+    },
   },
   methods: {
     selectMenu(index) {
       this.selectedIndex = index;
     },
-    toggleSidebar() {
-      this.isSidebarCollapsed = !this.isSidebarCollapsed;
-    }
-  }
+  },
 };
 </script>
 
@@ -88,10 +83,11 @@ export default {
 }
 
 .about-custom {
-  background-color: #0260ce;
-  padding: 15px;
+  background-color: #0260CE;
+  padding: 20px;
   border-radius: 20px;
   color: white;
+  font-size: x-large;
 }
 
 .container-fluid {
@@ -110,32 +106,37 @@ export default {
   position: relative;
 }
 
-.nav-link {
-  color: black;
+.nav-item {
+  position: relative;
 }
 
-.nav-link.active {
+.nav-link {
+  color: black;
+  padding-left: 30px;
+}
+
+/* .nav-item.active .nav-link {
   background-color: #0260ce;
   color: white;
   width: 200px;
+} */
+
+.selected-icon {
+  /* position: absolute;
+  left: 5px;
+  top: 50%; */
+  transform: translateY(-50%);
+  position: absolute;
+  right: -5px;
+  top: 20px;
+  border: none;
+  width: 20px;
+  height: 20px;
 }
 
 .content {
   padding: 40px;
   overflow-y: auto;
   width: 50vh;
-}
-
-.toggle-btn {
-  position: absolute;
-  right: -5px;
-  top: 20px;
-  border: none;
-  background: transparent;
-}
-
-.toggle-icon {
-  width: 24px;
-  height: 24px;
 }
 </style>

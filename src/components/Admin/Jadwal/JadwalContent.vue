@@ -1,19 +1,22 @@
 <template>
     <div class="container">
-        <!-- <div class="d-flex align-items-start my-3 h-100">
-            <button class="btn btn-custom shadow-lg btn-perangkat me-2" @click="handlePerangkatClick">
-                <img src="@/assets/Property 1=perangkat.png" alt="Perangkat" width="20" height="20" class="me-1" />
-                Perangkat
-            </button>
-            <button class="btn bg-white shadow-lg btn-perangkat" @click="handleTampilanClick">
-                <img src="@/assets/Vector.png" alt="Tampilan" width="20" height="20" class="me-1" />
-                Tampilan
-            </button>
-        </div> -->
-
         <!-- Wrapped Background and Table -->
-        <div class="background-container mt-3"></div>
-        <table class="table my-4">
+        <div class="highlight-jadwal mt-3"></div>
+        <div class="d-flex justify-content-between my-3">
+            <button class="btn-infografis me-2 p-2">
+                Tambah Infografis
+                <img src="@/assets/Iconplus.png" class="plus-icon" alt="Plus Icon" />
+            </button>
+            <div class="form-group has-search w-75 flex-grow rounded-5 d-flex">
+                <input type="text" class="form-control rounded-4" placeholder="Cari" />
+                <img src="@/assets/search-Bold.png" class="search-icon" alt="Search Icon" />
+            </div>
+            <button class="btn-filter ms-2 p-2">
+                Filter
+                <img src="@/assets/Icon-filter.png" class="filter-icon" alt="Filter Icon" />
+            </button>
+        </div>
+        <table class="table my-3">
             <thead>
                 <tr>
                     <th>Nama Perangkat</th>
@@ -61,8 +64,8 @@
             </tfoot>
         </table>
     </div>
-
 </template>
+
 
 
 <script>
@@ -112,7 +115,7 @@ export default {
                 { id: 40, name: 'Perangkat-40', type: 'TABLET', mac: '00-B0-D0-63-C2-29', status: true }
             ],
             currentPage: 1,
-            itemsPerPage: 6
+            itemsPerPage: 5
         };
     },
     computed: {
@@ -140,11 +143,9 @@ export default {
             this.currentPage = page;
         },
         handlePerangkatClick() {
-            // Handle Perangkat button click
             console.log("Perangkat button clicked");
         },
         handleTampilanClick() {
-            // Handle Tampilan button click
             console.log("Tampilan button clicked");
         }
     }
@@ -152,22 +153,48 @@ export default {
 </script>
 
 <style>
-.btn-perangkat {
-    width: 20;
-}
-
-.background-container {
-    background-image: url('@/assets/infografis.png');
-    background-size: cover;
-    background-position: center;
-    border-radius: 20px;
-    padding: 30px;
-    /* Membuat tabel dan pagination berada dalam background yang sama */
-    display: block;
-    overflow: hidden;
+.btn-infografis {
+    background-color: #01c45b;
     color: white;
+    width: 190px;
+    text-align: center;
+    border-radius: 20px;
+    margin: 5px 0;
+    font-size: 14px;
+    border: none;
 }
 
+.btn-filter {
+    background-color: #464646;
+    color: white;
+    width: 120px;
+    text-align: center;
+    border-radius: 20px;
+    margin: 5px 0;
+    font-size: 14px;
+    border: none;
+}
+
+.form-group.has-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.form-control {
+    padding-left: 40px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    width: 24px;
+    height: 24px;
+}
+
+input.form-control {
+    padding-left: 40px;
+}
 
 
 
@@ -175,7 +202,17 @@ export default {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
-    border-radius: 20px 20px 20px 20px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.highlight-jadwal {
+    background-image: url('/src/assets/jamtayang.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    padding: 40px;
+    display: block;
     overflow: hidden;
 }
 </style>

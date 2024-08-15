@@ -3,7 +3,7 @@
         <!-- UserNavbar -->
         <UserNavbar />
         <div class="container flex-grow-1">
-            <h1 class="faq-custom my-3 fw-bolder">FAQ | Frequently Asked Questions</h1>
+            <h1 class="faq-custom my-3 fw-bold">FAQ | Frequently Asked Questions</h1>
             <div class="accordion" id="faqAccordion">
                 <div v-for="(category, catIndex) in faqCategories" :key="'cat-' + catIndex">
                     <!-- <h2>{{ category.title }}</h2> -->
@@ -115,9 +115,10 @@ export default {
 
 .faq-custom {
     background-color: #0260CE;
-    padding: 15px;
+    padding: 20px;
     border-radius: 20px;
     color: white;
+    font-size: x-large;
 }
 
 
