@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-lg navbar-light px-5">
     <div class="container-fluid d-flex justify-content-evenly">
       <div class="navbar-brand ps-5">
-        <img src="@/assets/logo-kemendagri.png" alt="Logo" height="80" class="me-2" />
+        <img src="@/assets/logo-kemendagri.png" alt="Logo" width="60" class="me-2" />
         <div>
           <strong>KEMENTERIAN DALAM NEGERI</strong>
           <br />

@@ -2,25 +2,25 @@
     <UserLayout @show-login-modal="showLoginModal">
         <div class="container-fluid rounded-4 poppins-font bg-light">
             <div class="row align-items-center">
-                <div class="col-md-6 px-4">
-                    <img src="@/assets/logo-sie.png" width="150px" alt="Illustration" class="img-fluid mb-3" />
-                    <h1 class="text-custom text-primary poppins-bold">
-                        SISTEM INFORMASI EKSEKUTIF
-                    </h1>
-                    <span class="text-custom1 text-dark poppins-light">KEMENDAGRI</span>
-                    <p class="lead">
-                        Lorem Ipsum Dolor Sit Amet Consectetur, Semper Pharetra Gravida
-                        Elitard Adipiscing Una Urna Placerat Convallis, Turpis Sagittis A
-                        Aliquet Et Odio, Maecenas Libero Lachina Amet Odio Vestibulum
-                        Fermentum Et Malesuada, A Consequat Sagittis Tellus Faucibus Sed
-                        Duis Sapien Erat Interdum.
-                    </p>
+                <div class="col-md-6">
+                    <div class="ms-5">
+                        <img src="@/assets/logo-sie.png" width="100px" alt="Illustration" class="img-fluid mb-3" />
+                        <h1 class="text-custom text-primary poppins-bold">
+                            SISTEM INFORMASI EKSEKUTIF
+                            <span class="text-custom1 text-dark poppins-light">KEMENDAGRI</span>
+                        </h1>
+                        <p class="lead">
+                            Lorem ipsum dolor sit amet. Aut consequatur aliquid vel quisquam alias et consectetur iusto
+                            et harum dolor qui voluptatum aliquid aut suscipit pariatur. Sit aspernatur laborum id quos
+                            suscipit ea sunt quae rem debitis laborum!
+                        </p>
+                    </div>
                 </div>
                 <div class="col-md-6 d-flex justify-content-end align-items-end">
                     <div class="image-container">
                         <img src="@/assets/Rectangle 1.png" alt="Illustration"
                             class="img-fluid rounded-right foreground-image" />
-                        <Vue3Lottie :animationData="animationData" class="img-fluid background-image" />
+                        <Vue3Lottie :animationData="animationData" class="img-fluid ms-5 background-image" />
                     </div>
                 </div>
             </div>
@@ -73,8 +73,8 @@ export default {
     top: 0;
     left: 0;
     z-index: 1;
-    margin-top: 25vh;
-    height: 60vh;
+    margin-top: 15vh;
+    height: 50vh;
     object-fit: cover;
 }
 
@@ -84,7 +84,7 @@ export default {
     z-index: 2;
     display: flex;
     border-radius: 0 20px 20px 0;
-    height: 100vh;
+    height: 76vh;
     object-fit: cover;
     margin-left: auto;
 }
@@ -98,7 +98,7 @@ export default {
 .text-custom1 {
     color: black;
     font-size: 2.5vw;
-    font-weight: bolder;
+    font-weight: bold;
 }
 
 .lead {

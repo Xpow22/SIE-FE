@@ -1,8 +1,8 @@
 <template>
   <div class="about-page">
-    <UserNavbar />
+    <UserNavbar @show-login-modal="showLoginModal" />
     <div class="container flex-grow-1">
-      <h1 class="about-custom my-3 fw-bolder">Tentang Sistem Informasi Eksekutif (SIE)</h1>
+      <h1 class="about-custom my-3 fw-bold">Tentang Sistem Informasi Eksekutif (SIE)</h1>
       <div class="container-fluid bg-white rounded-5 d-flex">
         <!-- Sidebar -->
         <div class="question flex-column">
@@ -12,7 +12,6 @@
               <a href="#" class="nav-link">
                 {{ item.title }}
               </a>
-              <!-- Move the icon to the selected nav-item -->
               <img v-if="selectedIndex === index" src="@/assets/chevron-circle-right-Filled.png" alt="Selected Icon"
                 class="selected-icon" />
             </li>
@@ -24,6 +23,9 @@
         </div>
       </div>
     </div>
+    <teleport to="body">
+      <ModalLogin v-if="isLoginModalVisible" @close="isLoginModalVisible = false" :is-visible="isLoginModalVisible" />
+    </teleport>
     <UserFooter />
   </div>
 </template>
@@ -31,15 +33,18 @@
 <script>
 import UserNavbar from '@/components/UserNavbar.vue';
 import UserFooter from '@/components/UserFooter.vue';
+import ModalLogin from '@/components/auth/ModalLogin.vue';
 
 export default {
   name: 'AboutUs',
   components: {
     UserNavbar,
     UserFooter,
+    ModalLogin
   },
   data() {
     return {
+      isLoginModalVisible: false,
       menuItems: [
         {
           title: 'Apa itu SIE?',
@@ -70,6 +75,10 @@ export default {
     selectMenu(index) {
       this.selectedIndex = index;
     },
+    showLoginModal() {
+      console.log("Opening login modal");
+      this.isLoginModalVisible = true;
+    },
   },
 };
 </script>
@@ -84,7 +93,7 @@ export default {
 
 .about-custom {
   background-color: #0260CE;
-  padding: 20px;
+  padding: 30px;
   border-radius: 20px;
   color: white;
   font-size: x-large;
@@ -115,16 +124,8 @@ export default {
   padding-left: 30px;
 }
 
-/* .nav-item.active .nav-link {
-  background-color: #0260ce;
-  color: white;
-  width: 200px;
-} */
 
 .selected-icon {
-  /* position: absolute;
-  left: 5px;
-  top: 50%; */
   transform: translateY(-50%);
   position: absolute;
   right: -5px;

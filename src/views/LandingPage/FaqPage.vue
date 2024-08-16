@@ -1,7 +1,7 @@
 <template>
     <div class="faq-page d-flex flex-column min-vh-100">
         <!-- UserNavbar -->
-        <UserNavbar />
+        <UserNavbar @show-login-modal="showLoginModal" />
         <div class="container flex-grow-1">
             <h1 class="faq-custom my-3 fw-bold">FAQ | Frequently Asked Questions</h1>
             <div class="accordion" id="faqAccordion">
@@ -25,7 +25,11 @@
                 </div>
             </div>
         </div>
-
+        <!-- Modal Login -->
+        <teleport to="body">
+            <ModalLogin v-if="isLoginModalVisible" @close="isLoginModalVisible = false"
+                :is-visible="isLoginModalVisible" />
+        </teleport>
         <!-- UserFooter -->
         <UserFooter />
     </div>
@@ -35,15 +39,18 @@
 <script>
 import UserNavbar from "@/components/UserNavbar.vue";
 import UserFooter from "@/components/UserFooter.vue";
+import ModalLogin from "@/components/auth/ModalLogin.vue";
 
 export default {
     name: "FAQPage",
     components: {
         UserNavbar,
         UserFooter,
+        ModalLogin
     },
     data() {
         return {
+            isLoginModalVisible: false,
             faqCategories: [
                 {
                     title: "Pertanyaan Seputar SIE",
@@ -105,6 +112,12 @@ export default {
             ],
         };
     },
+    methods: {
+        showLoginModal() {
+            console.log("Opening login modal");
+            this.isLoginModalVisible = true;
+        },
+    },
 };
 </script>
 
@@ -115,7 +128,7 @@ export default {
 
 .faq-custom {
     background-color: #0260CE;
-    padding: 20px;
+    padding: 30px;
     border-radius: 20px;
     color: white;
     font-size: x-large;

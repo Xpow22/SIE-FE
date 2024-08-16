@@ -8,8 +8,4 @@ export default {
 };
 </script>
 
-<!-- <style>
-body {
-  background-color: linear-gradient(334.25deg, #d7f1ff -8.18%, #f2f8ff 65.15%);
-}
-</style> -->
+<style></style>

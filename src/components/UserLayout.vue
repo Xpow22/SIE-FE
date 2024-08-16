@@ -1,6 +1,6 @@
 <template>
   <div class="background">
-    <Navbar @show-login-modal="showLoginModal" />
+    <UserNavbar @show-login-modal="showLoginModal" />
     <div class="d-flex px-5" id="wrapper">
       <div id="page-content-wrapper">
         <main class="container-fluid px-5">
@@ -13,12 +13,12 @@
 </template>
 
 <script>
-import Navbar from './UserNavbar.vue';
+import UserNavbar from './UserNavbar.vue';
 import UserFooter from './UserFooter.vue';
 
 export default {
   components: {
-    Navbar,
+    UserNavbar,
     UserFooter,
   },
   methods: {

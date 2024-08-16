@@ -2,8 +2,10 @@
     <div v-if="isVisible" class="modal-backdrop">
         <div class="modal-dialog">
             <div class="modal-content position-relative">
-                <button type="button" class="btn-close position-absolute top-0 end-0 me-4 mt-3" aria-label="Close"
-                    @click="$emit('close')"></button>
+                <button type="button" class="position-absolute top-0 end-0 me-4 my-2 close" aria-label="Close"
+                    @click="$emit('close')">
+                    <img src="@/assets/times-square-Bold.svg" alt="Close" style="width: 25px;" />
+                </button>
                 <div class="modal-header mb-3 mt-4">
                     <img src="@/assets/graphic frame.png" width="650vw" alt="Illustration" class="img-fluid">
                 </div>
@@ -25,8 +27,12 @@
                         </div>
                         <div class="d-flex flex-column align-items-center">
                             <div v-if="showError" class="text-danger mb-3">Ups! Username/NIK Anda Tidak Ditemukan</div>
-                            <a v-if="!showError" href="#" class="text-decoration-none mb-3">Lupa kata sandi?<span
-                                    class="text-danger ms-1">Klik disini</span></a>
+                            <div v-if="!showError" class="mb-3">
+                                Lupa kata sandi?
+                                <a class="text-decoration-none cursor-pointer" @click="showForgotPasswordModal">
+                                    <span class="text-danger spasi">Klik disini</span>
+                                </a>
+                            </div>
                             <button type="submit" class="masuk btn">Masuk</button>
                         </div>
                     </form>
@@ -34,6 +40,8 @@
             </div>
         </div>
     </div>
+    <ForgotPassword v-if="isForgotPasswordVisible" :isVisible="isForgotPasswordVisible"
+        @close="closeForgotPasswordModal" />
 </template>
 
 <script>
@@ -41,10 +49,12 @@ import { useRouter } from 'vue-router';
 import { ref } from 'vue';
 import * as Yup from 'yup';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import ForgotPassword from './ForgotPassword.vue';
 
 export default {
     components: {
         FontAwesomeIcon,
+        ForgotPassword,
     },
     props: {
         isVisible: {
@@ -59,6 +69,7 @@ export default {
         const errors = ref({});
         const showError = ref(false);
         const showPassword = ref(false);
+        const isForgotPasswordVisible = ref(false);
 
         const dummyUsername = 'admin';
         const dummyPassword = 'admin123';
@@ -93,14 +104,25 @@ export default {
             showPassword.value = !showPassword.value;
         };
 
+        const showForgotPasswordModal = () => {
+            isForgotPasswordVisible.value = true;
+        };
+
+        const closeForgotPasswordModal = () => {
+            isForgotPasswordVisible.value = false;
+        };
+
         return {
             username,
             password,
             errors,
             showError,
             validateForm,
-            showPassword, // Include this in return
+            showPassword,
             togglePasswordVisibility,
+            isForgotPasswordVisible,
+            showForgotPasswordModal,
+            closeForgotPasswordModal,
         };
     },
 };
@@ -145,11 +167,16 @@ export default {
     border-radius: 20px;
 }
 
-.btn-close {
-    color: red;
-}
-
 .cursor-pointer {
     cursor: pointer;
+}
+
+.spasi {
+    margin-left: 1px;
+}
+
+.close {
+    border: none;
+    padding: 0;
 }
 </style>

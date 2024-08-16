@@ -2,8 +2,10 @@
     <div v-if="isVisible" class="modal-backdrop">
         <div class="modal-dialog">
             <div class="modal-content position-relative">
-                <button type="button" class="btn-close position-absolute top-0 end-0 me-4 mt-3" aria-label="Close"
-                    @click="$emit('close')"></button>
+                <button type="button" class="position-absolute top-0 end-0 me-4 my-2 close" aria-label="Close"
+                    @click="$emit('close')">
+                    <img src="@/assets/times-square-Bold.svg" alt="Close" style="width: 25px;" />
+                </button>
                 <div class="modal-header mb-3 mt-4">
                     <img src="@/assets/LupaKataSandi.png" width="650vw" alt="Illustration" class="img-fluid">
                 </div>
@@ -46,7 +48,7 @@ export default {
 .modal-content {
     background-color: white;
     padding: 20px;
-    height: 80vh;
+    height: 100%;
     width: 50vw;
     border-radius: 10px;
 }
@@ -67,7 +69,8 @@ export default {
     border-radius: 20px;
 }
 
-.btn-close {
-    color: red;
+.close {
+    border: none;
+    padding: 0;
 }
 </style>
