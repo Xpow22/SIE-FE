@@ -1,7 +1,14 @@
 <template>
     <div class="container">
         <!-- Wrapped Background and Table -->
-        <div class="highlight-laporan mt-3"></div>
+        <div class="highlight-laporan mt-3">
+            <div class="ms-3">
+                <h5 class="fw-bold text-white">LAPORAN</h5>
+                <div class="text-white fw-semibold">
+                    Lihat data list status perangkat aktif dan non-aktif perangkat anda pada tabel dibawah ini
+                </div>
+            </div>
+        </div>
         <div class="d-flex justify-content-between my-3">
             <button class="btn-infografis me-2 p-2">
                 Tambah Infografis
@@ -207,11 +214,11 @@ input.form-control {
 }
 
 .highlight-laporan {
-    background-image: url('/src/assets/laporan.png');
+    background-image: url('@/assets/highlight.png');
     background-size: cover;
     background-position: center;
     border-radius: 20px;
-    padding: 40px;
+    padding: 10px;
     display: block;
     overflow: hidden;
 }

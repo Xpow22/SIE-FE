@@ -1,5 +1,5 @@
 <template>
-    <div v-if="isVisible" class="modal-backdrop">
+    <div v-if="isVisible" class="modal-backdrop" @click.self="handleClose">
         <div class="modal-dialog">
             <div class="modal-content position-relative">
                 <button type="button" class="position-absolute top-0 end-0 me-4 my-2 close" aria-label="Close"
@@ -125,6 +125,11 @@ export default {
             closeForgotPasswordModal,
         };
     },
+    methods: {
+        handleClose() {
+            this.$emit('close');
+        }
+    }
 };
 </script>
 

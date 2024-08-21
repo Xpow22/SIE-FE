@@ -6,7 +6,7 @@
             <div class="content">
                 <slot />
             </div>
-            <UserFooter :class="{ 'collapsed': isSidebarCollapsed }" />
+            <AdminFooter :class="{ 'collapsed': isSidebarCollapsed }" />
         </div>
 
     </div>
@@ -15,15 +15,13 @@
 <script>
 import AdminNavbar from '../AdminNavbar.vue';
 import AdminSidebar from '../AdminSidebar.vue';
-import UserFooter from '../../UserFooter.vue';
-// import ModalLogin from '@/components/auth/ModalLogin.vue';
+import AdminFooter from '../AdminFooter.vue'
 
 export default {
     components: {
         AdminNavbar,
         AdminSidebar,
-        UserFooter,
-        // ModalLogin
+        AdminFooter,
     },
     data() {
         return {
@@ -44,6 +42,8 @@ export default {
 
 <style scoped>
 .dashboard {
+    height: 100%;
+    width: 100%;
     display: flex;
 }
 

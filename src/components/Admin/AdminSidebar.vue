@@ -1,6 +1,6 @@
 <template>
     <div :class="['sidebar bg-transparent', { 'collapsed': isCollapsed }]">
-        <div class="brand-container bg-transparent py-3">
+        <div class="brand-container bg-transparent py-2">
             <img src="@/assets/logo-sie.png" class="logo px-1" alt="Logo SIE">
             <div v-if="!isCollapsed" class="brand-name my-2">
                 <div class="text-primary fw-semibold">Sistem Informasi Eksekutif</div>
@@ -72,6 +72,7 @@ export default {
 
 .collapsed {
     width: 120px;
+    margin-top: 20px;
 }
 
 .rotated {
